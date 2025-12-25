@@ -1,6 +1,7 @@
-Write-Output "Starting basic Windows hardening..."
+# Firewall hardening (basic)
+Write-Output "Configuring Windows Firewall..."
 
-# Disable Guest account
-net user Guest /active:no
+netsh advfirewall set allprofiles state on
+netsh advfirewall set allprofiles firewallpolicy blockinbound,allowoutbound
 
-Write-Output "Guest account disabled."
+Write-Output "Firewall enabled and inbound default set to block."
