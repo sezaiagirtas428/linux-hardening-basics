@@ -1,25 +1,23 @@
-# Windows Hardening Basics
+# Windows Endpoint Security Baseline Tool
 
-This repository contains a basic Windows hardening script written in PowerShell.  
-It focuses on demonstrating fundamental security-hardening concepts in a clear and structured way.
+A PowerShell-based security baseline tool that assesses and optionally enforces essential Windows endpoint security controls.
+The tool is designed to provide visibility into system security posture and support informed hardening decisions.
 
-## Project Goals
-- Showcase a beginner-friendly Windows hardening approach
-- Provide a foundation for security automation using PowerShell
-- Encourage secure-by-default system configuration
+## Scope
 
-## What the Script Does
-- Applies basic security-related system configurations
-- Demonstrates how hardening tasks can be automated
-- Uses readable and modular PowerShell structure
+This tool focuses on validating and improving core security controls commonly expected on Windows endpoints, including:
 
-## Disclaimer
-This project is intended for **educational purposes only**.  
-Always test security scripts in a controlled environment before using them in production systems.
+- Windows Firewall configuration
+- Remote Desktop Protocol (RDP) exposure
+- Microsoft Defender Antivirus status
+- Defender Real-Time Protection
+- Microsoft Defender Attack Surface Reduction (ASR) rules
 
-## Security Controls Covered
-- Windows Firewall: Verified enabled for Domain/Private/Public profiles
-- RDP: Verified disabled
-- Microsoft Defender: Verified enabled (Real-time protection enabled)
-- Defender ASR: Enabled rule in Warn mode
-  - D4F940AB-401B-4EFC-AADC-AD5F3C50688A — Block Office applications from creating child processes (Warn)
+The goal is not to replace enterprise security products, but to provide a lightweight and transparent baseline assessment.
+
+## Limitations
+
+- This tool does not cover all CIS or NIST benchmark controls.
+- It is intended for educational, lab, and small-scale environments.
+- Administrative privileges may be required for certain checks or enforcement actions.
+- Users should review findings carefully before applying changes to production systems.
